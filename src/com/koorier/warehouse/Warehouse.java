@@ -56,10 +56,7 @@ public class Warehouse {
 	        if (inventoryItem.getQuantity() < inventoryItem.getThreshold()) {
 	            alertService.onLowStock(inventoryItem);
 	        }
-	    	
-	    }
-	    
-	    
+	    }  
 	    public void showInventory()
 	    {
 	        System.out.println("\nCurrent Inventory");
