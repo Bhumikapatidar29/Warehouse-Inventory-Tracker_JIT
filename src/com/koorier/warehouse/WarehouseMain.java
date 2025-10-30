@@ -20,7 +20,7 @@ public class WarehouseMain {
 		Integer thresold=sc.nextInt();
 		StockObserver stockobserver=new AlertService();
 		
-		Warehouse warehouse=new Warehouse(null);
+		Warehouse warehouse = new Warehouse(stockobserver);
 		InventoryItem inventoryItem=new InventoryItem(id, name, quantity, thresold);
 		warehouse.addProduct(inventoryItem);
 		

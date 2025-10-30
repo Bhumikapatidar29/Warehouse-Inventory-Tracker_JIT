@@ -5,12 +5,12 @@ import java.util.HashMap;
 public class Warehouse {
 	
 	 private HashMap<String, InventoryItem> inventory = new HashMap<>();
-	    private AlertService alertService;
+	    private StockObserver stockObserver;
 	    
-	    public Warehouse(AlertService alertService) {
+	    public Warehouse(StockObserver stockObserver) {
 			// TODO Auto-generated constructor stub
 	    	
-	    	this.alertService=alertService;
+	    	this.stockObserver=stockObserver;
 	    	
 	    }
 	    
@@ -54,7 +54,7 @@ public class Warehouse {
 	    	
 
 	        if (inventoryItem.getQuantity() < inventoryItem.getThreshold()) {
-	            alertService.onLowStock(inventoryItem);
+	            stockObserver.onLowStock(inventoryItem);
 	        }
 	    }  
 	    public void showInventory()
